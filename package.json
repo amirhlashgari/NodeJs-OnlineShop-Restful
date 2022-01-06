@@ -19,7 +19,9 @@
   "homepage": "https://github.com/amirhlashgari/NodeJs-OnlineShop-Restful#readme",
   "dependencies": {
     "body-parser": "^1.19.1",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.1.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
