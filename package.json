@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-onlineshop-restful",
+  "version": "1.0.0",
+  "description": "Node app with Restful api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirhlashgari/NodeJs-OnlineShop-Restful.git"
+  },
+  "author": "AmirHosein Lashkari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirhlashgari/NodeJs-OnlineShop-Restful/issues"
+  },
+  "homepage": "https://github.com/amirhlashgari/NodeJs-OnlineShop-Restful#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
