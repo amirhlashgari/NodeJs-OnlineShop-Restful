@@ -4,7 +4,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const { graphqlHttp } = require('express-graphql');
+const helmet = require('helmet');
+const compression = require('compression');
+const morgan = require('morgan');
+const graphqlHttp = require('express-graphql').graphqlHTTP;
 const graphqlSchema = require('./graphql/schema');
 const graphqlResolver = require('./graphql/resolvers');
 const auth = require('./middleware/auth');
@@ -28,6 +31,12 @@ const fileFilter = (req, file, cb) => {
     cb(null, false);
   }
 };
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+app.use(helmet()); // adds secure headers to requests.
+app.use(compression()); // compress assets to reduce css file size
+app.use(morgan('combined', { stream: accessLogStream })); // add logs of requests to access.log file according to above configs
 
 app.use(bodyParser.json());
 app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('image'));
